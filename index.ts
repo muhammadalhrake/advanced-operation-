@@ -48,18 +48,27 @@ function setDigit(digit:number){
       the.forEach(item=>mySetDigit.add(`${j.toString()}`+item))
       //console.log(i)
     }
-    the.clear();
+    /* the.clear();
     the=mySetDigit
     //the.forEach(item=>console.log(item))
     console.log((i==digit-5))
     if((i==digit-5)){
       mySetDigit.clear() 
       mySetDigit=new Set<string>()
-    }
+    } */
   }
   return mySetDigit
 }
-//setDigit(6).forEach(item=>arr.push(item))
+let mynew=new Set<string>()
+let mynew2=new Set<string>()
+for(let i=5;i<=8;i++){
+  setDigit(5).forEach(item=>mynew.add(`${i.toString()}`+item))
+}
+for(let i=5;i<=8;i++){
+  mynew.forEach(item=>mynew2.add(`${i.toString()}`+item))
+}
+mynew2.forEach(item=>arr.push(item))
+//setDigit(5).forEach(item=>arr.push(item))
 console.log(arr);
 
 // Write TypeScript code!
