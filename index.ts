@@ -45,7 +45,7 @@ function setDigit(digit:number){
   for(let i=0 ;i<digit-4;i++){
     //the=mySetDigit
     for( let j=5;j<=8;j++){
-      mySetDigit.forEach(item=>mySetDigit.add(`${j.toString()}`+item))
+      set4('5','6','7','8').forEach(item=>mySetDigit.add(`${j.toString()}`+item))
     }
   }
   return mySetDigit
