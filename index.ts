@@ -52,7 +52,7 @@ function setDigit(digit:number){
   }
   return mySetDigit
 }
-setDigit(6).forEach(item=>arr.push(item))
+//setDigit(6).forEach(item=>arr.push(item))
 console.log(arr);
 
 // Write TypeScript code!
