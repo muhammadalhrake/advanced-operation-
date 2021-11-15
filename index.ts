@@ -49,10 +49,13 @@ function setDigit(digit:number){
     }
     the.clear();
     the=mySetDigit
+    mySetDigit.clear()
+    the.forEach(item=>console.log(item ,"hhh"));
+    
   }
   return mySetDigit
 }
-//setDigit(6).forEach(item=>arr.push(item))
+setDigit(6).forEach(item=>arr.push(item))
 console.log(arr);
 
 // Write TypeScript code!
