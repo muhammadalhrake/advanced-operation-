@@ -41,16 +41,16 @@ let arr=[]
 //set3('1','2','4').forEach(item=>arr.push(item))
 function setDigit(digit:number){
   let mySetDigit=set4('5','6','7','8');
-  let the 
+  //let the 
   for(let i=0 ;i<digit-4;i++){
-    the=mySetDigit
+    //the=mySetDigit
     for( let j=5;j<=8;j++){
-      the.forEach(item=>mySetDigit.add(`${j.toString()}`+item))
+      mySetDigit.forEach(item=>mySetDigit.add(`${j.toString()}`+item))
     }
   }
   return mySetDigit
 }
-//setDigit(7).forEach(item=>arr.push(item))
+//setDigit(5).forEach(item=>arr.push(item))
 console.log(arr)
 
 // Write TypeScript code!
