@@ -46,12 +46,14 @@ function setDigit(digit:number){
     
     for( let j=5;j<=8;j++){
       the.forEach(item=>mySetDigit.add(`${j.toString()}`+item))
+      console.log(i)
     }
     the.clear();
     the=mySetDigit
-    mySetDigit.clear()
-    the.forEach(item=>console.log(item ,"hhh"));
-    
+    //the.forEach(item=>console.log(item))
+    if(!(i==digit-5)){
+      mySetDigit.clear() 
+    }
   }
   return mySetDigit
 }
