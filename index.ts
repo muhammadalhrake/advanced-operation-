@@ -48,7 +48,7 @@ function setDigit(digit:number){
   }
   return mySetDigit
 }
-setDigit(7).forEach(item=>arr.push(item))
+//setDigit(7).forEach(item=>arr.push(item))
 console.log(arr)
 
 // Write TypeScript code!
