@@ -68,10 +68,10 @@ for(let i=5;i<=8;i++){
 for(let i=5;i<=8;i++){
   mynew.forEach(item=>mynew2.add(`${i.toString()}`+item))
 }
-/* for(let i=5;i<=8;i++){
+for(let i=5;i<=8;i++){
   mynew2.forEach(item=>mynew3.add(`${i.toString()}`+item))
-} */
-//mynew2.forEach(item=>arr.push(item))
+}
+//mynew3.forEach(item=>arr.push(item))
 //setDigit(5).forEach(item=>arr.push(item))
 console.log(arr);
 
