@@ -40,18 +40,20 @@ function set4(f:string,s:string,th:string,forth:string){
 let arr=[]
 //set3('1','2','4').forEach(item=>arr.push(item))
 function setDigit(digit:number){
-  let mySetDigit=set4('5','6','7','8');
-  //let the 
+  let mySetDigit=new Set<string>();
+  let the =set4('5','6','7','8')
   for(let i=0 ;i<digit-4;i++){
-    //the=mySetDigit
+    
     for( let j=5;j<=8;j++){
-      set4('5','6','7','8').forEach(item=>mySetDigit.add(`${j.toString()}`+item))
+      the.forEach(item=>mySetDigit.add(`${j.toString()}`+item))
     }
+    the.clear();
+    the=mySetDigit
   }
   return mySetDigit
 }
-//setDigit(5).forEach(item=>arr.push(item))
-console.log(arr)
+setDigit(6).forEach(item=>arr.push(item))
+console.log(arr);
 
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
