@@ -37,7 +37,7 @@ function set4(f:string,s:string,th:string,forth:string){
   }
   return mySet4
 }
-let arr=[]
+let arr=new Array()
 //set3('1','2','4').forEach(item=>arr.push(item))
 function setDigit(digit:number){
   let mySetDigit=new Set<string>();
@@ -61,13 +61,17 @@ function setDigit(digit:number){
 }
 let mynew=new Set<string>()
 let mynew2=new Set<string>()
+let mynew3 = new Set<string>()
 for(let i=5;i<=8;i++){
   setDigit(5).forEach(item=>mynew.add(`${i.toString()}`+item))
 }
 for(let i=5;i<=8;i++){
   mynew.forEach(item=>mynew2.add(`${i.toString()}`+item))
 }
-mynew2.forEach(item=>arr.push(item))
+for(let i=5;i<=8;i++){
+  mynew2.forEach(item=>mynew3.add(`${i.toString()}`+item))
+}
+//mynew2.forEach(item=>arr.push(item))
 //setDigit(5).forEach(item=>arr.push(item))
 console.log(arr);
 
