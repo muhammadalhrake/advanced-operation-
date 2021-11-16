@@ -62,17 +62,25 @@ function setDigit(digit:number,numbers:string[],lastdigitSet:Set<string>){
   }else{
     mySet=lastdigitSet
   }
-  let mySetDigit=new Set<string>();  
-  for( let number of numbers){
-    mySet.forEach(item=>mySetDigit.add(`${number.toString()}`+item))
-   
+  let mySetDigit=new Set<string>();
+  if(digit-baseDigits==0){
+    if(lastdigitSet.size==0){
+      mySetDigit=mySet
+    }else{
+      mySetDigit=lastdigitSet
+    }
+  }else{
+    for( let number of numbers){
+      mySet.forEach(item=>mySetDigit.add(`${number.toString()}`+item))   
+    }
+    return setDigit(digit-1,numbers,mySetDigit)
   }
   return mySetDigit
 }
-//let set= new Set()
+let set= new Set<string>()
 //set.add('4').add("447").add("44").add("444")
 //console.log(set.size)
-//console.log(setDigit(9,['1','2','3','4','5']).size)
+console.log(setDigit(4,['1','2','3','4'],set).size)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
