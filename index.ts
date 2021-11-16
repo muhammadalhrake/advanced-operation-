@@ -80,7 +80,7 @@ function setDigit(digit:number,numbers:string[],lastdigitSet:Set<string>){
 let set= new Set<string>()
 //set.add('4').add("447").add("44").add("444")
 //console.log(set.size)
-console.log(setDigit(4,['1','2','3','4'],set).size)
+//console.log(setDigit(4,['1','2'],set).size)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
