@@ -72,7 +72,7 @@ let set= new Set()
 set.add('4').add("4").add("44").add("444")
 console.log(set.size)
 console.log(setDigit(9,['1','2','3','4','5']).size)
-setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
+//setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
