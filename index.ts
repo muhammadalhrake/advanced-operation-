@@ -54,24 +54,25 @@ function set5(f:string,s:string,th:string,forth:string,five:string ){
 }
 let arr=new Array()
 //set3('1','2','4').forEach(item=>arr.push(item))
-function setDigit(digit:number,numbers:string[]){
+function setDigit(digit:number,numbers:string[],lastdigitSet:Set<string>){
   const baseDigits= numbers.length;
-  let mySetDigit=new Set<string>();
   let mySet
-  (baseDigits==2)?mySet=set2(numbers[0],numbers[1]):(baseDigits==3)?mySet=set3(numbers[0],numbers[1],numbers[2]):(baseDigits==4)?mySet=set4(numbers[0],numbers[1],numbers[2],numbers[3]):mySet=set5(numbers[0],numbers[1],numbers[2],numbers[3],numbers[4])
-  for(let i=0 ;i<digit-baseDigits;i++){
-    
-    for( let number of numbers){
-      mySet.forEach(item=>mySetDigit.add(`${number.toString()}`+item))
-      
-    }
+  if(lastdigitSet.size==0){
+    (baseDigits==2)?mySet=set2(numbers[0],numbers[1]):(baseDigits==3)?mySet=set3(numbers[0],numbers[1],numbers[2]):(baseDigits==4)?mySet=set4(numbers[0],numbers[1],numbers[2],numbers[3]):mySet=set5(numbers[0],numbers[1],numbers[2],numbers[3],numbers[4])
+  }else{
+    mySet=lastdigitSet
+  }
+  let mySetDigit=new Set<string>();  
+  for( let number of numbers){
+    mySet.forEach(item=>mySetDigit.add(`${number.toString()}`+item))
+   
   }
   return mySetDigit
 }
-let set= new Set()
-set.add('4').add("4").add("44").add("444")
-console.log(set.size)
-console.log(setDigit(9,['1','2','3','4','5']).size)
+//let set= new Set()
+//set.add('4').add("447").add("44").add("444")
+//console.log(set.size)
+//console.log(setDigit(9,['1','2','3','4','5']).size)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
