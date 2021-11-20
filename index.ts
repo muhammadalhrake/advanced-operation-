@@ -92,11 +92,6 @@ function setDigit(digit: number, numbers: string[], lastdigitSet: Set<string>) {
   }
   return mySetDigit;
 }
-let set = new Set<string>();
-let rand = [];
-//set.add('4').add("447").add("44").add("444")
-//set = set2('1','2')
-set = setDigit(9, ['5', '6','7','8','9'], set);
 
 /* set.forEach(item=>console.log(item)) */
 //let rand =  Array.from(set);
@@ -131,7 +126,7 @@ function fill(count: number, rand: any[]) {
       arr = rand;
     }
     for (let j = 0; j < arr.length && i < count; j++) {
-      const num=arr[j]
+      const num = arr[j];
       myArr.push(num);
       //console.log(arr.filter((item) => item != num),num)
       //console.log(myArr)
@@ -141,16 +136,26 @@ function fill(count: number, rand: any[]) {
   return myArr;
 }
 
-
-set.forEach((item) => {
-  rand.push(item);
-});
-shuffle(rand);
-//rand=rand.filter((country) => country.startsWith("0"))
+//console.log(fill(50,rand).filter((country) => !country.startsWith("0")))
 //console.log(40, rand);
-console.log(fill(50,rand));
+//console.log(fill(50,rand));
 //console.log(set.size,rand.length)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
+
+function mainCreating(count:number,numbers:string[],digits:number) {
+  let set = new Set<string>();
+  let rand = [];
+  //set.add('4').add("447").add("44").add("444")
+  //set = set2('1','2')
+  set = setDigit(digits, numbers, set);
+  set.forEach((item) => {
+    rand.push(item);
+  });
+  shuffle(rand);
+  const myFinal=fill(count,rand)
+  return myFinal
+}
+
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
