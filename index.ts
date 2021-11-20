@@ -82,7 +82,7 @@ let rand=[]
 //set.add('4').add("447").add("44").add("444")
 //set = set2('1','2')
 //set =setDigit(5,['1','2','3','4'],set)
-console.log(setDigit(4,['1','2'],set).size)
+//console.log(setDigit(4,['1','2'],set).size)
 /* set.forEach(item=>console.log(item)) */
 //let rand =  Array.from(set);
 //console.log(rand)
