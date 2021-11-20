@@ -127,10 +127,12 @@ function fill(count: number, rand: any[]) {
     }
     for (let j = 0; j < arr.length && i < count; j++) {
       const num = arr[j];
-      myArr.push(num);
-      //console.log(arr.filter((item) => item != num),num)
-      //console.log(myArr)
-      i++;
+      if(!num.startsWith("0")){
+        myArr.push(num);
+        //console.log(arr.filter((item) => item != num),num)
+        //console.log(myArr)
+        i++;
+      }
     }
   }
   return myArr;
@@ -155,7 +157,7 @@ function mainCreating(count:number,numbers:string[],digits:number) {
   const myFinal=fill(count,rand)
   return myFinal
 }
-console.log(mainCreating(40,['1','2'],4))
+console.log(mainCreating(40,['0','1','2','3','4'],5))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
