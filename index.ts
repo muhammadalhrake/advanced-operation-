@@ -1,139 +1,155 @@
 // Import stylesheets
 import './style.css';
-function set2(f:string,l:string){
-  let mySet2=new Set<string>()
-  mySet2.add(f+f).add(f+l).add(l+f).add(l+l);
-  return mySet2
+function set2(f: string, l: string) {
+  let mySet2 = new Set<string>();
+  mySet2
+    .add(f + f)
+    .add(f + l)
+    .add(l + f)
+    .add(l + l);
+  return mySet2;
 }
 
-
-function set3(f:string,s:string,th:string){
-  const numbers=[f,s,th]
-  let first=set2(f,s)
-  let second=set2(s,th);
-  let therd=set2(f,th)
-  let mySet3=new Set<string>()
-  for(let number of numbers){
-    first.forEach(item1=>mySet3.add(`${number.toString()}`+item1))
-    second.forEach(item2=>mySet3.add(`${number.toString()}`+item2))
-    therd.forEach(item3=>mySet3.add(`${number.toString()}`+item3))
+function set3(f: string, s: string, th: string) {
+  const numbers = [f, s, th];
+  let first = set2(f, s);
+  let second = set2(s, th);
+  let therd = set2(f, th);
+  let mySet3 = new Set<string>();
+  for (let number of numbers) {
+    first.forEach((item1) => mySet3.add(`${number.toString()}` + item1));
+    second.forEach((item2) => mySet3.add(`${number.toString()}` + item2));
+    therd.forEach((item3) => mySet3.add(`${number.toString()}` + item3));
   }
-  return mySet3
+  return mySet3;
 }
-function set4(f:string,s:string,th:string,forth:string){
-  const numbers=[f,s,th,forth]
-  let first=set3(f,s,th);
-  let second=set3(f,s,forth);
-  let therd=set3(f,th,forth);
-  let forthy=set3(s,th,forth);
-  let mySet4=new Set<string>();
-  for(let number of numbers){
-    first.forEach(item1=>mySet4.add(`${number.toString()}`+item1))
-    second.forEach(item2=>mySet4.add(`${number.toString()}`+item2))
-    therd.forEach(item3=>mySet4.add(`${number.toString()}`+item3))
-    forthy.forEach(item4=>mySet4.add(`${number.toString()}`+item4))
+function set4(f: string, s: string, th: string, forth: string) {
+  const numbers = [f, s, th, forth];
+  let first = set3(f, s, th);
+  let second = set3(f, s, forth);
+  let therd = set3(f, th, forth);
+  let forthy = set3(s, th, forth);
+  let mySet4 = new Set<string>();
+  for (let number of numbers) {
+    first.forEach((item1) => mySet4.add(`${number.toString()}` + item1));
+    second.forEach((item2) => mySet4.add(`${number.toString()}` + item2));
+    therd.forEach((item3) => mySet4.add(`${number.toString()}` + item3));
+    forthy.forEach((item4) => mySet4.add(`${number.toString()}` + item4));
   }
-  return mySet4
+  return mySet4;
 }
-function set5(f:string,s:string,th:string,forth:string,five:string ){
-  const numbers=[f,s,th,forth,five]
-  let first=set4(f,s,th,forth);
-  let second=set4(f,s,th,five);
-  let therd=set4(f,th,forth,five);
-  let forthy=set4(s,th,forth,five);
-  let fivePoss=set4(f,s,forth,five);
-  let mySet5=new Set<string>();
-  for(let number of numbers){
-    first.forEach(item1=>mySet5.add(`${number.toString()}`+item1))
-    second.forEach(item2=>mySet5.add(`${number.toString()}`+item2))
-    therd.forEach(item3=>mySet5.add(`${number.toString()}`+item3))
-    forthy.forEach(item4=>mySet5.add(`${number.toString()}`+item4))
-    fivePoss.forEach(item5=>mySet5.add(`${number.toString()}`+item5))
+function set5(f: string, s: string, th: string, forth: string, five: string) {
+  const numbers = [f, s, th, forth, five];
+  let first = set4(f, s, th, forth);
+  let second = set4(f, s, th, five);
+  let therd = set4(f, th, forth, five);
+  let forthy = set4(s, th, forth, five);
+  let fivePoss = set4(f, s, forth, five);
+  let mySet5 = new Set<string>();
+  for (let number of numbers) {
+    first.forEach((item1) => mySet5.add(`${number.toString()}` + item1));
+    second.forEach((item2) => mySet5.add(`${number.toString()}` + item2));
+    therd.forEach((item3) => mySet5.add(`${number.toString()}` + item3));
+    forthy.forEach((item4) => mySet5.add(`${number.toString()}` + item4));
+    fivePoss.forEach((item5) => mySet5.add(`${number.toString()}` + item5));
   }
-  return mySet5
+  return mySet5;
 }
-let arr=new Array()
+let arr = new Array();
 //set3('1','2','4').forEach(item=>arr.push(item))
-function setDigit(digit:number,numbers:string[],lastdigitSet:Set<string>){
-  const baseDigits= numbers.length;
-  let mySet
-  if(lastdigitSet.size==0){
-    (baseDigits==2)?mySet=set2(numbers[0],numbers[1]):(baseDigits==3)?mySet=set3(numbers[0],numbers[1],numbers[2]):(baseDigits==4)?mySet=set4(numbers[0],numbers[1],numbers[2],numbers[3]):mySet=set5(numbers[0],numbers[1],numbers[2],numbers[3],numbers[4])
-  }else{
-    mySet=lastdigitSet
+function setDigit(digit: number, numbers: string[], lastdigitSet: Set<string>) {
+  const baseDigits = numbers.length;
+  let mySet;
+  if (lastdigitSet.size == 0) {
+    baseDigits == 2
+      ? (mySet = set2(numbers[0], numbers[1]))
+      : baseDigits == 3
+      ? (mySet = set3(numbers[0], numbers[1], numbers[2]))
+      : baseDigits == 4
+      ? (mySet = set4(numbers[0], numbers[1], numbers[2], numbers[3]))
+      : (mySet = set5(
+          numbers[0],
+          numbers[1],
+          numbers[2],
+          numbers[3],
+          numbers[4]
+        ));
+  } else {
+    mySet = lastdigitSet;
   }
-  let mySetDigit=new Set<string>();
-  if(digit-baseDigits==0){
-    if(lastdigitSet.size==0){
-      mySetDigit=mySet
-    }else{
-      mySetDigit=lastdigitSet
+  let mySetDigit = new Set<string>();
+  if (digit - baseDigits == 0) {
+    if (lastdigitSet.size == 0) {
+      mySetDigit = mySet;
+    } else {
+      mySetDigit = lastdigitSet;
     }
-  }else{
-    for( let number of numbers){
-      mySet.forEach(item=>mySetDigit.add(`${number.toString()}`+item))   
+  } else {
+    for (let number of numbers) {
+      mySet.forEach((item) => mySetDigit.add(`${number.toString()}` + item));
     }
-    return setDigit(digit-1,numbers,mySetDigit)
+    return setDigit(digit - 1, numbers, mySetDigit);
   }
-  return mySetDigit
+  return mySetDigit;
 }
-let set= new Set<string>()
-let rand=[]
+let set = new Set<string>();
+let rand = [];
 //set.add('4').add("447").add("44").add("444")
 //set = set2('1','2')
-set =setDigit(2,['1','2'],set)
+set = setDigit(2, ['1', '2'], set);
 
 /* set.forEach(item=>console.log(item)) */
 //let rand =  Array.from(set);
 //console.log(rand)
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
+  let currentIndex = array.length,
+    randomIndex;
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {
-
     // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 
   return array;
 }
-function fill(count:number,rand:any[]){
-  let arr=[]
-  if(arr.length==0){
-    arr=rand
+function fill(count: number, rand: any[]) {
+  let arr = [];
+  if (arr.length == 0) {
+    arr = rand;
   }
-  let myArr=[]
-  for(let i=0;i<count;){
-    for(let j=0;j<arr.length&&i<count;j++){
-      if(arr.length==0){
-        arr=rand
+  let myArr = [];
+  for (let i = 0; i < count; ) {
+    for (let j = 0; j < arr.length && i < count; j++) {
+      if (arr.length == 0) {
+        arr = rand;
       }
-      myArr.push(arr[j])
-      arr.filter(item=>item!=arr[j])
+      myArr.push(arr[j]);
+      arr.filter((item) => item != arr[j]);
+      i++;
     }
   }
-  return myArr
+  return myArr;
 }
 
-let i=0
-set.forEach(item=>{
-  
-    rand.push(item)
-  
-})
-shuffle(rand)
-let count =[]
-for(let i=0;i<40;i++){
-  count.push(rand[i])
+let i = 0;
+set.forEach((item) => {
+  rand.push(item);
+});
+shuffle(rand);
+let count = [];
+for (let i = 0; i < 40; i++) {
+  count.push(rand[i]);
 }
-console.log(40,rand)
-console.log(count)
+console.log(40, rand);
+console.log(count);
 //console.log(fill(40,rand))
 //console.log(set.size,rand.length)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
