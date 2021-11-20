@@ -155,7 +155,7 @@ function mainCreating(count:number,numbers:string[],digits:number) {
   const myFinal=fill(count,rand)
   return myFinal
 }
-
+console.log(mainCreating(40,['1','2'],4))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
