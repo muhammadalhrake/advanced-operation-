@@ -96,7 +96,7 @@ let set = new Set<string>();
 let rand = [];
 //set.add('4').add("447").add("44").add("444")
 //set = set2('1','2')
-set = setDigit(5, ['5', '6','7','8'], set);
+set = setDigit(9, ['5', '6','7','8','9'], set);
 
 /* set.forEach(item=>console.log(item)) */
 //let rand =  Array.from(set);
@@ -134,21 +134,21 @@ function fill(count: number, rand: any[]) {
       const num=arr[j]
       myArr.push(num);
       //console.log(arr.filter((item) => item != num),num)
-      console.log(myArr)
+      //console.log(myArr)
       i++;
     }
   }
   return myArr;
 }
 
-let i = 0;
+
 set.forEach((item) => {
   rand.push(item);
 });
 shuffle(rand);
-
+rand=rand.filter((country) => country.startsWith("0"))
 //console.log(40, rand);
-//console.log(fill(500,rand));
+console.log(fill(50,rand));
 //console.log(set.size,rand.length)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 // Write TypeScript code!
