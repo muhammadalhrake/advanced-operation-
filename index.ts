@@ -111,7 +111,11 @@ function fill(count:number,rand:any[]){
   let myArr=[]
   for(let i=0;i<count;){
     for(let j=0;j<arr.length&&i<count;j++){
-
+      if(arr.length==0){
+        arr=rand
+      }
+      myArr.push(arr[j])
+      arr.filter(item=>item!=arr[j])
     }
   }
   return myArr
