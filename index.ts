@@ -111,7 +111,7 @@ set.forEach(item=>{
 })
 shuffle(rand)
 let count =[]
-for(let i=0;i<40;){
+/* for(let i=0;i<40;){
   for(let j=0;j<rand.length&&i<40;j++)
   
     if(count.indexOf(rand[j])==-1){
@@ -119,8 +119,8 @@ for(let i=0;i<40;){
       i++;
     }
     
-}
-console.log(count)
+} */
+//console.log(count)
 //console.log(set.size,rand.length)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 // Write TypeScript code!
