@@ -148,7 +148,7 @@ set.forEach((item) => {
 shuffle(rand);
 
 console.log(40, rand);
-console.log(fill(5,rand));
+console.log(fill(500,rand));
 //console.log(set.size,rand.length)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 // Write TypeScript code!
