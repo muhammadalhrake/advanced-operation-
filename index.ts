@@ -131,8 +131,9 @@ function fill(count: number, rand: any[]) {
       if (arr.length == 0) {
         arr = rand;
       }
-      myArr.push(arr[j]);
-      arr.filter((item) => item != arr[j]);
+      const num=arr[j]
+      myArr.push(num);
+      arr.filter((item) => item != num);
       console.log(arr)
       i++;
     }
