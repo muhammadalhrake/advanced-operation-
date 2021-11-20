@@ -146,7 +146,7 @@ set.forEach((item) => {
   rand.push(item);
 });
 shuffle(rand);
-rand=rand.filter((country) => country.startsWith("0"))
+//rand=rand.filter((country) => country.startsWith("0"))
 //console.log(40, rand);
 console.log(fill(50,rand));
 //console.log(set.size,rand.length)
