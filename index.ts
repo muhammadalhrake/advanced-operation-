@@ -78,9 +78,50 @@ function setDigit(digit:number,numbers:string[],lastdigitSet:Set<string>){
   return mySetDigit
 }
 let set= new Set<string>()
+let rand=[]
 //set.add('4').add("447").add("44").add("444")
 //console.log(set.size)
-//console.log(setDigit(4,['1','2'],set).size)
+set =setDigit(9,['1','2','3','4'],set)
+console.log(setDigit(4,['1','2'],set).size)
+/* set.forEach(item=>console.log(item)) */
+//let rand =  Array.from(set);
+//console.log(rand)
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+let i=0
+set.forEach(item=>{
+  
+    rand.push(item)
+  
+})
+shuffle(rand)
+let count =[]
+for(let i=0;i<40;){
+  for(let j=0;j<rand.length&&i<40;j++)
+  
+    if(count.indexOf(rand[j])==-1){
+      count.push(rand[j])
+      i++;
+    }
+    
+}
+
+//console.log(set.size,rand.length)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
