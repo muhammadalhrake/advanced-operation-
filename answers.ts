@@ -1,12 +1,9 @@
-
-
-
-function getAns(first:number,second:number){
-  const firstNum=first+second;
-  const secondNum= shuffle(firstNum)
-  
+function getAns(first: number, second: number) {
+  const firstNum = first + second;
+  const secondNum = 444; //to do second number
 }
-export function shuffle(array) {
+export function shuffle(a: number[]) {
+  let array = [...a];
   let currentIndex = array.length,
     randomIndex;
 
