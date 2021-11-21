@@ -163,8 +163,9 @@ function mainCreatingFirstNumber(
 }
 
 const myNumber = mainCreatingFirstNumber(40, ['0', '1', '2', '3', '4'], 5);
-console.log(myNumber);
-console.log(myNumber[0][1]);
+// console.log(myNumber);
+// console.log(myNumber[0][1]);
+
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
