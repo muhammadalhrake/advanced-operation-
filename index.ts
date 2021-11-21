@@ -127,7 +127,7 @@ function fill(count: number, rand: any[]) {
     }
     for (let j = 0; j < arr.length && i < count; j++) {
       const num = arr[j];
-      if(!num.startsWith("0")){
+      if (!num.startsWith('0')) {
         myArr.push(num);
         //console.log(arr.filter((item) => item != num),num)
         //console.log(myArr)
@@ -144,7 +144,11 @@ function fill(count: number, rand: any[]) {
 //console.log(set.size,rand.length)
 //setDigit(9,['1','2','3','4','5']).forEach(item=>console.log(item))
 
-function mainCreating(count:number,numbers:string[],digits:number) {
+function mainCreatingFirstNumber(
+  count: number,
+  numbers: string[],
+  digits: number
+) {
   let set = new Set<string>();
   let rand = [];
   //set.add('4').add("447").add("44").add("444")
@@ -154,10 +158,13 @@ function mainCreating(count:number,numbers:string[],digits:number) {
     rand.push(item);
   });
   shuffle(rand);
-  const myFinal=fill(count,rand)
-  return myFinal
+  const myFinal = fill(count, rand);
+  return myFinal;
 }
-console.log(mainCreating(40,['0','1','2','3','4'],5))
+
+const myNumber = mainCreatingFirstNumber(40, ['0', '1', '2', '3', '4'], 5);
+console.log(myNumber);
+console.log(myNumber[0][1]);
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
