@@ -159,8 +159,8 @@ function mainCreatingFirstNumber(
     rand.push(item);
   });
   shuffle(rand);
-  const myFinal = fill(count, rand);
-  return myFinal;
+  const myFinalFirstNumber = fill(count, rand);
+  return myFinalFirstNumber;
 }
 
 const myNumber = mainCreatingFirstNumber(40, ['0', '1', '2', '3', '4'], 5);
