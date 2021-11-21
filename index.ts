@@ -1,6 +1,7 @@
 // Import stylesheets
 import './style.css';
 import {secondGeeneratS}from './secondNumber'
+import {shuffle}from './answers'
 function set2(f: string, l: string) {
   let mySet2 = new Set<string>();
   mySet2
@@ -97,25 +98,7 @@ function setDigit(digit: number, numbers: string[], lastdigitSet: Set<string>) {
 /* set.forEach(item=>console.log(item)) */
 //let rand =  Array.from(set);
 //console.log(rand)
-function shuffle(array) {
-  let currentIndex = array.length,
-    randomIndex;
 
-  // While there remain elements to shuffle...
-  while (currentIndex != 0) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-}
 function fill(count: number, rand: any[]) {
   let arr = [];
   if (arr.length == 0) {
