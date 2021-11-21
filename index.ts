@@ -1,5 +1,6 @@
 // Import stylesheets
 import './style.css';
+import {secondGeeneratS}from './secondNumber'
 function set2(f: string, l: string) {
   let mySet2 = new Set<string>();
   mySet2
@@ -165,7 +166,7 @@ function mainCreatingFirstNumber(
 const myNumber = mainCreatingFirstNumber(40, ['0', '1', '2', '3', '4'], 5);
 // console.log(myNumber);
 // console.log(myNumber[0][1]);
-
+console.log(secondGeeneratS([5,6,7,8],'hard',6))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
