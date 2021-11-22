@@ -9,7 +9,7 @@ export function getAns(first: number, second: number) {
   let answers = [first.toString(), second.toString(), therd.toString(), fourth.toString()];
   let shuffleAns=[];
   shuffle(answers).forEach(item=>shuffleAns.push(item))
-  return shuffleAns
+  return shuffleAns as number[]
 }
 export function shuffle(a: string[]) {
   let array = [...a];

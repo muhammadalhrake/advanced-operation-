@@ -38,7 +38,7 @@ export function secondGeeneratS(
     }
   }
 
-  return secondNumber.reverse();
+  return secondNumber.reverse() as number[];
 }
 
 export function between(min: number, max: number) {

@@ -1,7 +1,8 @@
 // Import stylesheets
 import './style.css';
 import { secondGeeneratS } from './secondNumber';
-import { shuffle } from './answers';
+import { shuffle ,getAns} from './answers';
+import { monad } from './model';
 function set2(f: string, l: string) {
   let mySet2 = new Set<string>();
   mySet2
@@ -141,14 +142,27 @@ function mainCreatingFirstNumber(
   set.forEach((item) => {
     rand.push(item);
   });
-  shuffle(rand);
+  rand=shuffle(rand);
   const myFinalFirstNumber = fill(count, rand);
   return myFinalFirstNumber;
 }
-
-const myNumber = mainCreatingFirstNumber(40, ['0', '1', '2', '3', '4'], 5);
-
-// console.log(myNumber);
+function generateQuestion(firstnumber:string,level:string,sDigit:number){
+  let first =[] 
+  firstnumber.split('').forEach(item=>first.push(+item))
+  let second=secondGeeneratS(first,level,sDigit);
+  let answers=getAns(+first.join(''),+second.join(''))
+  return {firstNumber:+first.join(''),secondNumber:+second.join(''),answers:answers}as monad
+}
+function mainGeneration(count:number,level:string,numbers:string[],fDigit:number,sDigit:number){
+  const firstNumbers =mainCreatingFirstNumber(count,numbers,fDigit)
+  let questions=new Array<monad>()
+  firstNumbers.forEach(item=>questions.push(generateQuestion(item,level,sDigit)))
+  //console.log(questions)
+  return questions
+}
+const myNumber = mainCreatingFirstNumber(40, [ '2', '3', '4'], 5);
+console.log(mainGeneration(40,'easy',['1','2'],4,5))
+//console.log(myNumber);
 // console.log(myNumber[0][1]);
 //console.log(secondGeeneratS([4,3,2,1],'easy',6))
 // Write TypeScript code!
