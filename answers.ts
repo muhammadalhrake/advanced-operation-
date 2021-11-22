@@ -6,9 +6,9 @@ export function getAns(first: number, second: number) {
   const digitOfFirst = firstNum.toString().length;
   const therd = therdNumberOfAns(firstNum,secondNum,digitOfFirst)
   const fourth = forthNumberOfAns(firstNum,secondNum,therd,digitOfFirst)
-  let answers = [first.toString(), second.toString(), therd.toString(), fourth.toString()];
+  let answers = [firstNum.toString(), secondNum.toString(), therd.toString(), fourth.toString()];
   let shuffleAns=[];
-  shuffle(answers).forEach(item=>shuffleAns.push(item))
+  shuffle(answers).forEach(item=>shuffleAns.push(+item))
   return shuffleAns as number[]
 }
 export function shuffle(a: string[]) {
