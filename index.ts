@@ -1,7 +1,7 @@
 // Import stylesheets
 import './style.css';
-import {secondGeeneratS}from './secondNumber'
-import {shuffle}from './answers'
+import { secondGeeneratS } from './secondNumber';
+import { shuffle } from './answers';
 function set2(f: string, l: string) {
   let mySet2 = new Set<string>();
   mySet2
@@ -147,6 +147,7 @@ function mainCreatingFirstNumber(
 }
 
 const myNumber = mainCreatingFirstNumber(40, ['0', '1', '2', '3', '4'], 5);
+
 // console.log(myNumber);
 // console.log(myNumber[0][1]);
 //console.log(secondGeeneratS([4,3,2,1],'easy',6))

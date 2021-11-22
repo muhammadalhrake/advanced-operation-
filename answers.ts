@@ -1,18 +1,15 @@
 import { between } from './secondNumber';
 
-function getAns(first: number, second: number) {
+export function getAns(first: number, second: number) {
   const firstNum = first + second;
   const secondNum = secondNumberOfAns(firstNum); //to do second number
   const digitOfFirst = firstNum.toString().length;
-  const third = between(
-    +new Array(digitOfFirst).fill(1).join(''),
-    +new Array(digitOfFirst).fill(9).join('')
-  );
-  const fourth = between(
-    +new Array(digitOfFirst).fill(1).join(''),
-    +new Array(digitOfFirst).fill(9).join('')
-  );
-  let answers = [first, second, third, fourth];
+  const therd = therdNumberOfAns(firstNum,secondNum,digitOfFirst)
+  const fourth = forthNumberOfAns(firstNum,secondNum,therd,digitOfFirst)
+  let answers = [first.toString(), second.toString(), therd.toString(), fourth.toString()];
+  let shuffleAns=[];
+  shuffle(answers).forEach(item=>shuffleAns.push(item))
+  return shuffleAns
 }
 export function shuffle(a: string[]) {
   let array = [...a];
