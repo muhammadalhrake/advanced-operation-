@@ -149,7 +149,7 @@ function mainCreatingFirstNumber(
 const myNumber = mainCreatingFirstNumber(40, ['0', '1', '2', '3', '4'], 5);
 // console.log(myNumber);
 // console.log(myNumber[0][1]);
-console.log(secondGeeneratS([5,6,7,8],'hard',6))
+//console.log(secondGeeneratS([4,3,2,1],'easy',6))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
 appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
