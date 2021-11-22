@@ -34,6 +34,12 @@ export function shuffle(a: string[]) {
 function secondNumberOfAns(firstNUmberOfAns: number) {
   let first = firstNUmberOfAns.toString().split('');
   let second = +shuffle(first).join('');
+  if(first.reduce((acc, next) => (acc == next ? acc : 0), first[0])){
+    return between(
+      +new Array(first.length).fill(1).join(''),
+      +new Array(first.length).fill(9).join('')
+    );
+  }
   if (second != firstNUmberOfAns) {
     return second;
   } else {

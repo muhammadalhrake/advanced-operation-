@@ -161,9 +161,9 @@ function mainGeneration(count:number,level:string,numbers:string[],fDigit:number
   return questions
 }
 const myNumber = mainCreatingFirstNumber(40, [ '2', '3', '4'], 5);
-//console.log(mainGeneration(40,'easy',['1','2'],4,5))
+console.log(mainGeneration(40,'easy',['1','2'],2,2))
 //console.log(myNumber);
-// console.log(myNumber[0][1]);
+ //console.log(getAns(44,22));
 //console.log(secondGeeneratS([4,3,2,1],'easy',6))
 // Write TypeScript code!
 const appDiv: HTMLElement = document.getElementById('app');
